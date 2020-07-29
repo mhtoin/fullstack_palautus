@@ -6,6 +6,7 @@ import Country from './components/Country'
 const App = () => {
   const [ countries, setCountries] = useState([])
   const [filterVal, setFilterVal] = useState('')
+  const [weatherData, setWeatherData] = useState([])
   const api_key = process.env.REACT_APP_API_KEY
 
   useEffect(() => { 
@@ -38,15 +39,22 @@ const App = () => {
       )
     }
 
+      /*
+      axios
+      .get(`http://api.weatherstack.com/current?access_key=${api_key}&query=${filterResults.map(country => country.capital)}`)      
+      .then(response => {console.log('request complete', response.data)
+      setWeatherData(response.data) })
+      */
+
     return (
       <div>
         {filterResults.map(country =>
-          <Country country={country}/>)}
+          <Country country={country} api_key={api_key}/>)}
           </div>
     )
   }
- 
 
+  
   return (
     <div>
       Find countries <Filter value={filterVal} onChange={handleFilterChange} />

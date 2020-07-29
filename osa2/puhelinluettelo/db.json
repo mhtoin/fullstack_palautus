@@ -1,9 +1,29 @@
 {
   "persons": [
     {
-      "name": "Miika",
-      "number": "05098765",
+      "name": "Arto Hellas",
+      "number": "55555",
       "id": 1
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": 3
+    },
+    {
+      "name": "Miika Oinonen",
+      "number": "503654",
+      "id": 6
+    },
+    {
+      "name": "Karlos",
+      "number": "895542",
+      "id": 7
+    },
+    {
+      "name": "Mimo",
+      "number": "800",
+      "id": 8
     }
   ]
 }
