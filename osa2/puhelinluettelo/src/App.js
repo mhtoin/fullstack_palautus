@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Person from './components/Person'
@@ -27,8 +26,7 @@ const App = () => {
       event.preventDefault()
       const personObject = {
           name: newName,
-          number: newNumber,
-          date: new Date().toISOString
+          number: newNumber
         }
 
         const nameExists = persons
@@ -123,6 +121,7 @@ const App = () => {
       handleNameChange={handleNameChange}
       handleNumberChange={handleNumberChange} />
       <h2>Numbers</h2>
+      {console.log(numbersToShow)}
       <ul>
             {numbersToShow.map(person => 
                 <Person name={person.name} number={person.number} handleRemove={handleRemove(person.id)}/>)}
